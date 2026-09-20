@@ -1,0 +1,33 @@
+# MounRiver / Eclipse build output.
+# These embed absolute paths from the machine that built them, so they must
+# never be committed.
+obj/
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+subdir.mk
+makefile
+objects.mk
+sources.mk
+
+# Eclipse per-workspace state. .settings also records a file-encoding default
+# (GBK on a Chinese-locale MounRiver install) that would corrupt these sources
+# for anyone whose IDE is set to UTF-8.
+.settings/
+.metadata/
+*.launch
+RemoteSystemsTempFiles/
+
+# Keep .project, .cproject, .template and *.wvproj: they are what makes the
+# examples open in MounRiver without any setup, and they contain no absolute
+# paths (they use PARENT-2-PROJECT_LOC and ${workspace_loc} instead).
+
+# OS noise
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store

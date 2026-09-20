@@ -1,0 +1,40 @@
+Third-party code in this repository
+===================================
+
+SRC/  —  WCH CH32V003 Standard Peripheral Library
+-------------------------------------------------
+
+Everything under SRC/ (Core, Debug, Ld, Peripheral, Startup) is WCH's vendor
+library, redistributed unmodified from the official CH32V003 EVT package. It is
+not covered by this repository's MIT licence. Each file carries its own header:
+
+    Copyright (c) 2021 Nanjing Qinheng Microelectronics Co., Ltd.
+    Attention: This software (modified or not) and binary are used for
+    microcontroller manufactured by Nanjing Qinheng Microelectronics.
+
+That is the whole of WCH's stated licence. Read literally, it permits use with
+WCH microcontrollers and says nothing about redistribution either way. In
+practice WCH distributes the EVT package publicly and freely, and a large number
+of public projects vendor it the same way this one does.
+
+It is bundled here so the examples build with no setup, which is the point of
+the repository. If you would rather not redistribute it, delete SRC/ and
+download the EVT package from WCH instead:
+
+    https://www.wch-ic.com/products/CH32V003.html
+    https://github.com/openwch/ch32v003
+
+The driver in lib/ depends only on the SPL's public API (ch32v00x.h and the
+GPIO/RCC/I2C headers) plus Delay_Init/Delay_Us/Delay_Ms from SRC/Debug. It has
+no dependency on anything in SRC/ being present in this tree specifically, so it
+drops into any CH32V003 project that already has the EVT library.
+
+Every copyright header in SRC/ has been left intact. Please keep it that way.
+
+
+HD44780 / ST7066U
+-----------------
+
+No vendor code is involved — the driver is written from the published Hitachi
+HD44780U and Sitronix ST7066U datasheets. Those documents are referenced in the
+README but not redistributed here.
